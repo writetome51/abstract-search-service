@@ -1,0 +1,29 @@
+{
+  "name": "@writetome51/abstract-search-service",
+  "version": "0.0.1",
+  "description": "An abstract Typescript/Javascript class ",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/abstract-search-service.git"
+  },
+  "keywords": [
+    "abstract",
+    "typescript",
+    "class"
+  ],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/abstract-search-service/issues"
+  },
+  "homepage": "https://github.com/writetome51/abstract-search-service#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "@writetome51/has-value-no-value": "^1.0.2"
+  }
+}
