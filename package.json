@@ -1,7 +1,7 @@
 {
   "name": "@writetome51/abstract-search-service",
   "version": "0.0.1",
-  "description": "An abstract Typescript/Javascript class ",
+  "description": "An abstract Typescript/Javascript class that provides skeletal functionality for search operations",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,6 +12,9 @@
     "url": "git+https://github.com/writetome51/abstract-search-service.git"
   },
   "keywords": [
+    "search",
+    "searching",
+    "operation",
     "abstract",
     "typescript",
     "class"
