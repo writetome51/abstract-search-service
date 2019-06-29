@@ -1,10 +1,10 @@
 # AbstractSearchService
 
-An abstract TypeScript/JavaScript class that simply provides a `results` property,  
-which is assigned the returned result of the `_searchAlgorithm()`.   
-`_searchAlgorithm` is a property which must be assigned a function in a subclass.  
-In the subclass you decide what exactly `_searchAlgorithm()` will do and what it will  
-return.  Then when you access `results`, `_searchAlgorithm()` is called.
+An abstract TypeScript/JavaScript class that provides a `results` property,  
+and a `_searchAlgorithm` property.  `results` is read-only, and when accessed  
+returns the result of `_searchAlgorithm()`.   
+`_searchAlgorithm` must be assigned a function in a subclass, which decides  
+what exactly `_searchAlgorithm()` will do and what it will return.
 
 
 ## Example
