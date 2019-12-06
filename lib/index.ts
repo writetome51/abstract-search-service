@@ -5,17 +5,17 @@ import { noValue } from '@writetome51/has-value-no-value';
 
 export abstract class AbstractSearchService {
 
-	protected _searchAlgorithm: () => any;
-
-
 	get results(): any {
 		if (noValue(this._searchAlgorithm)) {
 			throw new Error(
-				'The \'_searchAlgorithm\' property must be set before you can access the \'results\' property'
+				'"_searchAlgorithm" must be assigned a function before you can access' +
+				' the "results" property'
 			);
 		}
 		return this._searchAlgorithm();
 	}
 
+
+	protected abstract _searchAlgorithm(): any;
 
 }

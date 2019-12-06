@@ -1,10 +1,9 @@
 # AbstractSearchService
 
 An abstract TypeScript/JavaScript class that provides a `results` property,  
-and a `_searchAlgorithm` property.  `results` is read-only, and when accessed  
-returns the result of `_searchAlgorithm()`.   
-`_searchAlgorithm` must be assigned a function in a subclass, which decides  
-what exactly `_searchAlgorithm()` will do and what it will return.
+and an abstract `_searchAlgorithm` method.  `results` is read-only, and when  
+accessed returns the result of `_searchAlgorithm()`.   
+`_searchAlgorithm` must be defined in a subclass.
 
 
 ## Example
@@ -17,18 +16,18 @@ export class UserSearchService extends AbstractSearchService {
 
     searchText = '';
 
-    constructor(private __users: User[]){
-    
-        this._searchAlgorithm = () => {
-            // If no searchText, return all users:
-            if (this.searchText.length === 0) return this.__users;
-            
-            // Else, check if searchText found in user's name:
-            else return this.__users.filter((user) => {
-                if (user.name === undefined) return false;
-                else return (user.name.includes(this.searchText));
-            });
-        };
+    constructor(private __users){
+    }
+
+    protected _searchAlgorithm() {
+        // If no searchText, return all users:
+        if (this.searchText.length === 0) return this.__users;
+                    
+        // Else, check if searchText found in user's name:
+        else return this.__users.filter((user) => {
+            if (user.name === undefined) return false;
+            else return (user.name.includes(this.searchText));
+        });
     }
 
 }
@@ -46,10 +45,11 @@ console.log(userSearch.results);
 ## Properties
 ```ts
 results: any // read-only
-
-protected _searchAlgorithm: () => any;
 ```
-
+## Methods
+```
+protected abstract _searchAlgorithm(): any
+```
 
 ## Installation
 

@@ -8,7 +8,8 @@ var AbstractSearchService = /** @class */ (function () {
     Object.defineProperty(AbstractSearchService.prototype, "results", {
         get: function () {
             if (has_value_no_value_1.noValue(this._searchAlgorithm)) {
-                throw new Error('The \'_searchAlgorithm\' property must be set before you can access the \'results\' property');
+                throw new Error('"_searchAlgorithm" must be assigned a function before you can access' +
+                    ' the "results" property');
             }
             return this._searchAlgorithm();
         },

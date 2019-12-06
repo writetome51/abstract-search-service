@@ -1,6 +1,8 @@
 export declare abstract class AbstractSearchService {
 
-	readonly results: any;
-	protected _searchAlgorithm: () => any;
+	get results(): any;
+
+
+	protected abstract _searchAlgorithm: () => any;
 
 }
